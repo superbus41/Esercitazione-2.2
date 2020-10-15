@@ -1,21 +1,28 @@
 package esercitazione;
 
-public class Immagine extends ElementoMultimediale {
+public class Immagine implements ElementoMultimediale {
 
+	String titolo;
 	int brightness;
-	
-	public Immagine(String titolo, int durata, int brightness) {
-		super(titolo, durata);
+
+	public Immagine(String titolo, int brightness) {
+		super();
+		this.titolo = titolo;
 		this.brightness = brightness;
 	}
-
-	@Override
-	public void Play() {
-		
+	
+	public String getTitolo() {
+		return titolo;
 	}
 	
-	public void Show() {
-		System.out.print(getTitolo());
+	@Override
+	public void play() {
+		
+	}
+
+
+	public void show() {
+		System.out.print(titolo);
 		for (int j = 0; j < brightness; j++)
 			System.out.print("*");
 		System.out.println();

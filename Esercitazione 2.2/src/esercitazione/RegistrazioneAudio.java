@@ -1,24 +1,36 @@
 package esercitazione;
 
-public class RegistrazioneAudio extends ElementoMultimediale {
+public class RegistrazioneAudio implements ElementoMultimediale {
 	
-	int volume;
+	String titolo;
+	int durata, volume;
 	
+
 	public RegistrazioneAudio(String titolo, int durata, int volume) {
-		super(titolo, durata);
+		this.titolo = titolo;
+		this.durata = durata;
 		this.volume = volume;
 	}
 
+	public String getTitolo() {
+		return titolo;
+	}
 	@Override
-	public void Play() {
-		for (int i = 0; i < getDurata(); i++) {
-			System.out.print(getTitolo());
+	public void play() {
+		for (int i = 0; i < durata; i++) {
+			System.out.print(titolo);
 			for (int j = 0; j < volume; j++)
 				System.out.print("!");
 			System.out.println();
 		}
 		
 	}
+	
+	@Override
+	public void show() {
+				
+	}
+
 
 	public void Weaker() {
 		volume--;
@@ -27,5 +39,7 @@ public class RegistrazioneAudio extends ElementoMultimediale {
 	public void Louder() {
 		volume++;
 	}
+
+
 	
 }
